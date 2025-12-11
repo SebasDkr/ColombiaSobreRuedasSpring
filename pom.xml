@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Archivo POM (Project Object Model) de Maven.
+    Este archivo define la configuración del proyecto, sus dependencias,
+    plugins y versiones requeridas para compilar y ejecutar la aplicación.
+    Forma parte obligatoria de la evidencia del módulo solicitado.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Versión del modelo POM -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Dependencia padre: Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.12</version>
+        <relativePath/>
+    </parent>
+
+    <!-- Identificación del proyecto -->
+    <groupId>com.colombia.rentacar</groupId>
+    <artifactId>ColombiaSobreRuedasSpring</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <!-- Información descriptiva del proyecto -->
+    <name>ColombiaSobreRuedasSpring</name>
+    <description>Proyecto Spring Boot para Colombia Sobre Ruedas</description>
+
+    <!-- Propiedades globales del proyecto -->
+    <properties>
+        <!-- Versión de Java requerida por el proyecto -->
+        <java.version>17</java.version>
+    </properties>
+
+    <!-- Dependencias necesarias para la aplicación -->
+    <dependencies>
+
+        <!-- Dependencia principal para crear aplicaciones web con Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Dependencias de prueba, utilizadas solo para tests automáticos -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- Configuración del proceso de construcción (build) -->
+    <build>
+        <plugins>
+            <!-- Plugin de Spring Boot para empaquetar y ejecutar la aplicación -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
