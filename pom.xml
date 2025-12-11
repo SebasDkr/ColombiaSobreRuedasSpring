@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    Archivo POM (Project Object Model) de Maven.
-    Este archivo define la configuración del proyecto, sus dependencias,
-    plugins y versiones requeridas para compilar y ejecutar la aplicación.
-    Forma parte obligatoria de la evidencia del módulo solicitado.
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!-- Versión del modelo POM -->
     <modelVersion>4.0.0</modelVersion>
@@ -16,7 +11,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.12</version>
+        <version>3.5.8</version> <!-- Última versión menor disponible -->
         <relativePath/>
     </parent>
 
@@ -24,27 +19,43 @@
     <groupId>com.colombia.rentacar</groupId>
     <artifactId>ColombiaSobreRuedasSpring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-    <!-- Información descriptiva del proyecto -->
     <name>ColombiaSobreRuedasSpring</name>
     <description>Proyecto Spring Boot para Colombia Sobre Ruedas</description>
 
     <!-- Propiedades globales del proyecto -->
     <properties>
-        <!-- Versión de Java requerida por el proyecto -->
         <java.version>17</java.version>
     </properties>
 
     <!-- Dependencias necesarias para la aplicación -->
     <dependencies>
 
-        <!-- Dependencia principal para crear aplicaciones web con Spring Boot -->
+        <!-- Spring Boot Web: para crear APIs REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Dependencias de prueba, utilizadas solo para tests automáticos -->
+        <!-- Spring Data JPA: para persistencia en base de datos -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Base de datos H2 en memoria: para desarrollo y pruebas -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Validación de beans: @Valid, @NotBlank, @Positive, etc. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- Dependencias para pruebas automáticas -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -53,10 +64,10 @@
 
     </dependencies>
 
-    <!-- Configuración del proceso de construcción (build) -->
+    <!-- Configuración del proceso de construcción -->
     <build>
         <plugins>
-            <!-- Plugin de Spring Boot para empaquetar y ejecutar la aplicación -->
+            <!-- Plugin de Spring Boot: empaquetar y ejecutar la aplicación -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
